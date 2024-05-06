@@ -38,7 +38,22 @@ app.use((req, res, next) => {
   next();
 });
 
+// mongoose
+//   .connect(
+//     "mongodb+srv://admin:admin@nodebackend.qbovm6i.mongodb.net/Node-API?retryWrites=true&w=majority&appName=NodeBackend"
+//   )
+//   .then(() => {
+//     console.log("Connected to database!");
+//     app.listen(serv, () => {
+//       console.log(`Server is running on port ${serv}`);
+//     });
+//   })
+//   .catch((err) => console.log(err));
+
 dbConnect();
+app.listen(serv, () => {
+  console.log(`Server is running on port ${serv}`);
+});
 
 // routes
 app.use("/", studentRoute);
